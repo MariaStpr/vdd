@@ -792,7 +792,7 @@ body {
   }
 }
 
-@media (max-height: 900px) {
+@media (max-height: 550px) {
     .header {
         &__submenu {
             height: 80vh;

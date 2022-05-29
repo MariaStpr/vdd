@@ -19,7 +19,7 @@
                     <img src="img/icons/logo.svg" alt="logo">
                 </a>
                 <div class="header__menu-places">
-                    <div class="header__menu-town icon-location">Улан-Удэ <span class="header__arrow arrow"></span></div>
+                    <div class="header__menu-town icon-location">Улан-Удэ</div>
                     <ul class="header__submenu">
                         <li>
                             <a href="#" class="submenu__link">Улан-Удэ</a>
@@ -70,9 +70,9 @@
                 </div>
             </div>
             <div class="header__menu-right">
-                <a href="tel:88002505007"class="header__list-item icon-phone">8(800)-250-50-07</a>
-                <span class="icon-phone"></span>
-                <a href="#"class="header__list-item icon-search"></a>
+                <a href="tel:88002505007" class="header__list-item icon-phone">8(800)-250-50-07</a>
+                <a href="tel:88002505007"> <span class="icon-phone"></span></a>
+                <button class="header__list-item icon-search"></button>
                 <a href="#" class="header__list-item icon-user"></a>
                 <div class="header__cart" data-modal>
                     <button class="icon-cart"></button>
@@ -122,56 +122,75 @@
             <div class="promo__menu">
                 <div class="promo__buttons">
                     <div class="promo__buttons-catalog">Каталог</div>
-                    <div href="#" class="promo__buttons-search">Поиск</div>
+                    <div class="promo__buttons-search">Поиск</div>
                 </div>
-                <ul class="promo__menu-list">
-                    <div class="catalog__close">
-                        <span></span>
-                        <span></span>
+                <div class="promo__menu-wrapper">
+                    <ul class="promo__menu-list">
+                        <div class="catalog__close">
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <li class="promo__menu-item"><a href="#">Хозяйственные товары</a>
+                            <ul class="promo__submenu">
+                                <!-- <li class="promo__submenu-item">
+                                    <a href="#">Уход за одеждой</a>
+                                </li>
+                                <li class="promo__submenu-item">
+                                    <a href="#">Сад и огород</a>
+                                </li> -->
+                            </ul>
+                        </li>
+                        <li class="promo__menu-item"><a href="#">Освещение</a>
+                            <ul class="promo__submenu">
+                            </ul>
+                        </li>
+                        <li class="promo__menu-item"><a href="#">Посуда</a>
+                            <ul class="promo__submenu">
+                            </ul>
+                        </li>
+                        <li class="promo__menu-item"><a href="#">Текстиль</a>
+                            <ul class="promo__submenu">
+                            </ul>
+                        </li>
+                        <li class="promo__menu-item"><a href="#">Мелкая бытовая техника</a>
+                            <ul class="promo__submenu">
+                            </ul>
+                        </li>
+                        <li class="promo__menu-item"><a href="#">Декор</a>
+                            <ul class="promo__submenu">
+                            </ul>
+                        </li>
+                        <li class="promo__menu-item"><a href="#">Бытовая химия</a>
+                            <ul class="promo__submenu">
+                            </ul>
+                        </li>
+                        <li class="promo__menu-item"><a href="#">IDEA для дома</a>
+                            <ul class="promo__submenu">
+                            </ul>
+                        </li>
+                        <li class="promo__menu-item"><a href="#">Продукты питания</a>
+                            <ul class="promo__submenu">
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="promo__menu-search">
+                    <div class="container">
+                        <div class="search__close">
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="promo__menu-input">
+                            <input type="text" placeholder="Поиск по каталогу">
+                            <button class="search-icon icon-search">
+                            </button>
+                            <button class="search__empty">
+                                <span></span>
+                                <span></span>
+                            </button>
+                        </div>
                     </div>
-                    <li class="promo__menu-item"><a href="#">Хозяйственные товары</a>
-                        <ul class="promo__submenu">
-                            <!-- <li class="promo__submenu-item">
-                                <a href="#">Уход за одеждой</a>
-                            </li>
-                            <li class="promo__submenu-item">
-                                <a href="#">Сад и огород</a>
-                            </li> -->
-                        </ul>
-                    </li>
-                    <li class="promo__menu-item"><a href="#">Освещение</a>
-                        <ul class="promo__submenu">
-                        </ul>
-                    </li>
-                    <li class="promo__menu-item"><a href="#">Посуда</a>
-                        <ul class="promo__submenu">
-                        </ul>
-                    </li>
-                    <li class="promo__menu-item"><a href="#">Текстиль</a>
-                        <ul class="promo__submenu">
-                        </ul>
-                    </li>
-                    <li class="promo__menu-item"><a href="#">Мелкая бытовая техника</a>
-                        <ul class="promo__submenu">
-                        </ul>
-                    </li>
-                    <li class="promo__menu-item"><a href="#">Декор</a>
-                        <ul class="promo__submenu">
-                        </ul>
-                    </li>
-                    <li class="promo__menu-item"><a href="#">Бытовая химия</a>
-                        <ul class="promo__submenu">
-                        </ul>
-                    </li>
-                    <li class="promo__menu-item"><a href="#">IDEA для дома</a>
-                        <ul class="promo__submenu">
-                        </ul>
-                    </li>
-                    <li class="promo__menu-item"><a href="#">Продукты питания</a>
-                        <ul class="promo__submenu">
-                        </ul>
-                    </li>
-                </ul>
+                </div>
             </div>
             <div class="promo__slider">
                 <!-- Slider main container -->
@@ -250,6 +269,49 @@
                         </a>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="season">
+    <div class="container">
+        <div class="season__wrapper">
+            <h2 class="season__goods-title title">
+                Сезонные товары
+            </h2>
+            <div class="season__goods">
+                <a href="#" class="season__goods-card goods__card">
+                    <div class="goods__card-img">
+                        <img src="img/season/season1.jpg" alt="">
+                    </div>
+                    <div class="goods__card-title">
+                        Бассейны
+                    </div>
+                </a>
+                <a href="#" class="season__goods-card goods__card">
+                    <div class="goods__card-img">
+                        <img src="img/season/season2.jpg" alt="">
+                    </div>
+                    <div class="goods__card-title">
+                        Комплектующие для бассейна
+                    </div>
+                </a>
+                <a href="#" class="season__goods-card goods__card">
+                    <div class="goods__card-img">
+                        <img src="img/season/season3.jpg" alt="">
+                    </div>
+                    <div class="goods__card-title">
+                        Качели, подвесные кресла
+                    </div>
+                </a>
+                <a href="#" class="season__goods-card goods__card">
+                    <div class="goods__card-img">
+                        <img src="img/season/season4.jpg" alt="">
+                    </div>
+                    <div class="goods__card-title">
+                        Мангалы
+                    </div>
+                </a>
             </div>
         </div>
     </div>

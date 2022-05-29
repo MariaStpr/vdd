@@ -165,7 +165,7 @@ body {
   text-decoration: none;
   list-style: none;
   margin: 0;
-  min-width: 240px;
+  min-width: 255px;
   z-index: 10;
   position: absolute;
   top: -5px;
@@ -192,12 +192,11 @@ body {
 }
 .header__menu-right a {
   color: #000;
-  font-size: 18px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 24px;
   text-decoration: none;
-  margin-right: 32px;
 }
 .header__menu-right span.icon-phone {
   display: none;
@@ -216,12 +215,22 @@ body {
 .header__menu-right .header__list-item.icon-phone:hover {
   text-shadow: 3px 3px 20px #fff;
 }
+.header__menu-right .header__list-item.icon-search {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin-right: 32px;
+  cursor: pointer;
+}
 .header__menu-right .header__list-item.icon-search::before {
   font-size: 22px;
   transition: text-shadow 0.5s ease;
 }
 .header__menu-right .header__list-item.icon-search:hover {
   text-shadow: 3px 3px 20px #fff;
+}
+.header__menu-right .header__list-item.icon-user {
+  margin-right: 32px;
 }
 .header__menu-right .header__list-item.icon-user::before {
   font-size: 22px;
@@ -278,8 +287,8 @@ body {
   border-radius: 8px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   z-index: 3;
-  top: -5px;
-  right: -5px;
+  top: -8px;
+  right: -17px;
   position: absolute;
   transition: 0.6s all;
   flex-direction: column;
@@ -287,9 +296,9 @@ body {
   gap: 25px;
 }
 .header .menu-hamburger__list.active {
-  height: 250px;
-  overflow: auto;
   display: block;
+  overflow-y: scroll;
+  height: 250px;
 }
 .header .menu-hamburger__btn {
   border-radius: 10px;
@@ -391,6 +400,39 @@ body {
   border-radius: 10px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
+.promo__menu-wrapper.active {
+  display: block;
+  overflow: scroll;
+  position: fixed;
+  background-color: #fff;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  top: 0;
+  left: 0;
+  border-radius: 0;
+}
+.promo__menu-wrapper.active .catalog__close {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  top: 20px;
+  right: 40px;
+}
+.promo__menu-wrapper.active .catalog__close span {
+  display: block;
+  height: 3px;
+  width: 25px;
+  background-color: #000;
+  margin: 0;
+}
+.promo__menu-wrapper.active .catalog__close span:nth-child(1) {
+  transform: translateY(16px) rotate(-45deg);
+}
+.promo__menu-wrapper.active .catalog__close span:nth-child(2) {
+  transform: translateY(13px) rotate(45deg);
+}
 .promo__menu-list {
   margin: 0;
   padding: 25px;
@@ -412,45 +454,93 @@ body {
   background: #e9f8ff;
   color: #008fd5;
 }
-.promo__menu-list.active {
-  display: block;
-  overflow: hidden;
-  position: fixed;
-  background-color: #fff;
-  z-index: 10;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  top: 0;
-  left: 0;
-  border-radius: 0;
-  padding: 55px;
-}
-.promo__menu-list.active .catalog__close {
-  position: fixed;
-  width: 30px;
-  height: 30px;
-  top: 20px;
-  right: 40px;
-}
-.promo__menu-list.active .catalog__close span {
-  display: block;
-  height: 3px;
-  width: 25px;
-  background-color: #000;
-  margin: 0;
-}
-.promo__menu-list.active .catalog__close span:nth-child(1) {
-  transform: translateY(16px) rotate(-45deg);
-}
-.promo__menu-list.active .catalog__close span:nth-child(2) {
-  transform: translateY(13px) rotate(45deg);
-}
 .promo__menu-item {
   margin-bottom: 15px;
 }
 .promo__menu-item:last-child {
   margin-bottom: 0;
+}
+.promo__menu-search {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 90px;
+  left: 0;
+  background-color: #fff;
+  z-index: 8;
+}
+.promo__menu-search .container {
+  position: relative;
+  padding-top: 60px;
+}
+.promo__menu-input {
+  border: 1px solid #000;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+.promo__menu-input input {
+  border: none;
+  background-color: transparent;
+  padding: 10px;
+  width: 100%;
+  font-size: 24px;
+  width: 100%;
+  height: 51px;
+}
+.promo .search-icon {
+  font-size: 24px;
+  margin-right: 20px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+.promo .search__empty {
+  width: 27px;
+  height: 24px;
+  margin-right: 20px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+.promo .search__empty span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: #000;
+  transition: 0.5s all;
+}
+.promo .search__empty span:nth-child(1) {
+  transform: translateY(3px) rotate(-45deg);
+}
+.promo .search__empty span:nth-child(2) {
+  transform: translateY(1px) rotate(45deg);
+}
+.promo .search__close {
+  width: 28px;
+  height: 25px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+.promo .search__close span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: #000;
+  transition: 0.5s all;
+}
+.promo .search__close span:nth-child(1) {
+  transform: translateY(8px) rotate(-45deg);
+}
+.promo .search__close span:nth-child(2) {
+  transform: translateY(6px) rotate(45deg);
 }
 .promo__slider {
   width: 945px;
@@ -526,6 +616,51 @@ body {
   height: 48px;
   margin-right: 13px;
 }
+.season {
+  margin-top: 100px;
+  padding: 0 10px;
+}
+.season__goods {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  margin-top: 30px;
+}
+.title {
+  font-size: 28px;
+}
+
+.goods__card {
+  text-decoration: none;
+}
+.goods__card-img {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  transition: all 0.5s ease;
+}
+.goods__card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.goods__card-img:hover {
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+.goods__card-title {
+  color: #333;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  margin: 15px 0 0 0;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+.goods__card-title:hover {
+  color: #604696;
+}
+
 .footer {
   margin: 80px 0 50px 0;
 }
@@ -665,6 +800,14 @@ body {
     margin: 15px 0;
   }
 
+  .season__goods {
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .season .goods__card-title {
+    font-size: 14px;
+  }
+
   .footer__menu {
     flex: 0 1 65%;
   }
@@ -693,6 +836,24 @@ body {
   .header__menu-places {
     display: none;
   }
+  .header__menu-right .header__list-item.icon-search {
+    display: none;
+  }
+  .header .menu-hamburger__wrapper {
+    padding: 80px;
+    width: 60%;
+    margin: 0 auto;
+  }
+  .header .menu-hamburger__list.active {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    top: 0;
+    left: 0;
+    border-radius: 0;
+    overflow: auto;
+  }
 
   .promo__wrapper {
     flex-direction: column;
@@ -705,14 +866,21 @@ body {
     background: transparent;
     box-shadow: none;
   }
-  .promo__menu-list {
+  .promo__menu-wrapper {
     display: none;
+  }
+  .promo__menu-list {
+    padding: 55px 45px;
   }
   .promo__slider {
     width: 100%;
   }
   .promo .benefits__item-img {
     margin: 0;
+  }
+
+  .season {
+    margin-top: 60px;
   }
 
   .footer__menu {
@@ -756,26 +924,11 @@ body {
   .header__menu-right .header__list-item.icon-user {
     display: none;
   }
-  .header__menu-right .header__list-item.icon-search {
-    display: none;
-  }
   .header__menu-right .accordion {
     font-size: 24px;
   }
   .header__cart {
     margin-right: 40px;
-  }
-  .header .menu-hamburger__wrapper {
-    padding: 50px;
-  }
-  .header .menu-hamburger__list.active {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    top: 0;
-    left: 0;
-    border-radius: 0;
   }
 
   .promo .benefits__wrapper {
@@ -787,6 +940,29 @@ body {
   .promo .benefits__item-img {
     flex: 0 0 36px;
     height: 36px;
+  }
+  .promo__menu-input {
+    height: 60px;
+  }
+  .promo__menu-input input {
+    font-size: 20px;
+    height: 40px;
+  }
+  .promo .search__close {
+    right: 18px;
+  }
+  .promo .search__empty {
+    margin-right: 10px;
+    height: 26px;
+    width: 28px;
+  }
+  .promo .search-icon {
+    margin-right: 10px;
+  }
+
+  .season__goods {
+    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .footer__wrapper {

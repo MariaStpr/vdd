@@ -624,7 +624,7 @@ h1, h2, h3, h4, h5, h6 {
 .season {
   margin-top: 100px;
   padding: 50px 10px;
-  background: url("../img/season_bg.jpg") center center/contain repeat;
+  background: url("../img/season_bg3.jpg") center center/contain repeat;
 }
 .season__goods {
   display: grid;

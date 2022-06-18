@@ -614,10 +614,7 @@ h1, h2, h3, h4, h5, h6 {
   background: #fff;
 }
 .promo .benefits {
-  height: 100px;
   margin-top: 25px;
-  border: 1px solid #e0e0e0;
-  border-radius: 16px;
 }
 .promo .benefits__wrapper {
   display: flex;
@@ -625,27 +622,36 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   height: 100%;
   padding: 0 15px;
-  flex-wrap: wrap;
+  gap: 15px;
 }
 .promo .benefits__item {
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: #000;
+  color: #fff;
   font-weight: 600;
-  transition: color 0.3s ease;
+  transition: color 0.5s ease;
+  border-radius: 10px;
+  padding: 17px;
 }
-.promo .benefits__item-1:hover {
-  color: #13a538;
+.promo .benefits__item:hover {
+  color: #000;
 }
-.promo .benefits__item-2:hover {
-  color: #ec6608;
+.promo .benefits__item-1 {
+  background-color: #604696;
+  flex: 0 1 20%;
 }
-.promo .benefits__item-3:hover {
-  color: #008fd5;
+.promo .benefits__item-2 {
+  background-color: #fdc300;
+  flex: 0 1 20%;
 }
-.promo .benefits__item-4:hover {
-  color: #f9b000;
+.promo .benefits__item-3 {
+  background-color: #13a538;
+  flex: 0 1 20%;
+}
+.promo .benefits__item-4 {
+  background-color: #ec6608;
+  flex: 0 1 20%;
 }
 .promo .benefits__item-img {
   flex: 0 0 48px;
@@ -655,7 +661,7 @@ h1, h2, h3, h4, h5, h6 {
 .season {
   margin-top: 100px;
   padding: 50px 10px;
-  background-color: #f2fff4;
+  background: url(../img/season_bg3.jpg) 400px/400px repeat;
 }
 .season__goods {
   display: grid;
@@ -685,7 +691,7 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 .goods__card-title {
-  color: #333;
+  color: #000;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
@@ -822,13 +828,14 @@ h1, h2, h3, h4, h5, h6 {
 .footer__contact-social {
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  width: 215px;
   margin-top: 25px;
 }
 .footer__contact-social img {
   width: 40px;
   height: 40px;
+}
+.footer__contact-social > a {
+  margin-right: 15px;
 }
 .footer__contact-item {
   text-decoration: none;
@@ -890,6 +897,13 @@ h1, h2, h3, h4, h5, h6 {
   .promo__slider {
     width: 660px;
   }
+  .promo .benefits__wrapper {
+    flex-wrap: wrap;
+  }
+  .promo .benefits__item {
+    flex: 1 0 40%;
+    text-align: center;
+  }
 
   .new__goods {
     grid-template-columns: repeat(4, 1fr);
@@ -927,8 +941,7 @@ h1, h2, h3, h4, h5, h6 {
     height: auto;
   }
   .promo .benefits__item {
-    flex: 1 0 50%;
-    margin: 15px 0;
+    flex: 1 0 38%;
   }
 
   .season__goods {

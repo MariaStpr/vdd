@@ -112,7 +112,10 @@ h1, h2, h3, h4, h5, h6 {
   position: fixed;
   width: 100%;
   z-index: 10;
-  background-color: #8973b8;
+  background-color: #f5f5f5;
+}
+.header__scroll {
+  background-color: #ec6608;
 }
 .header nav {
   display: flex;
@@ -257,35 +260,41 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
   margin-right: 32px;
   cursor: pointer;
+  transform: scale(1);
 }
 .header__menu-right .header__list-item.icon-search::before {
   font-size: 22px;
   transition: text-shadow 0.5s ease;
 }
 .header__menu-right .header__list-item.icon-search:hover {
-  text-shadow: 3px 3px 20px #fff;
+  transform: scale(1.3);
+  transition: transform 0.5s ease;
 }
 .header__menu-right .header__list-item.icon-user {
   margin-right: 32px;
+  transform: scale(1);
+}
+.header__menu-right .header__list-item.icon-user:hover {
+  transform: scale(1.3);
+  transition: transform 0.5s ease;
 }
 .header__menu-right .header__list-item.icon-user::before {
   font-size: 22px;
   transition: text-shadow 0.5s ease;
 }
-.header__menu-right .header__list-item.icon-user:hover {
-  text-shadow: 3px 3px 20px #fff;
-}
 .header__menu-right .icon-cart {
   border: none;
   background-color: transparent;
   cursor: pointer;
+  transform: scale(1);
+}
+.header__menu-right .icon-cart:hover {
+  transform: scale(1.3);
+  transition: transform 0.5s ease;
 }
 .header__menu-right .icon-cart::before {
   font-size: 22px;
   transition: text-shadow 0.5s ease;
-}
-.header__menu-right .icon-cart:hover {
-  text-shadow: 3px 3px 20px #fff;
 }
 .header__menu-right .accordion {
   position: relative;
@@ -311,6 +320,54 @@ h1, h2, h3, h4, h5, h6 {
 }
 .header__cart {
   margin-right: 50px;
+  position: relative;
+}
+.header__cart-block {
+  display: none;
+  position: absolute;
+  right: -60px;
+  top: -5px;
+  width: 450px;
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  z-index: 3;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+.header__cart-block .cart-block__title {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 30px;
+}
+.header__cart-block .cart-block__body {
+  color: #333;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  margin-top: 18px;
+}
+.header__cart-block .cart-block__close {
+  width: 28px;
+  height: 25px;
+  position: absolute;
+  top: 20px;
+  right: 14px;
+  cursor: pointer;
+}
+.header__cart-block .cart-block__close span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: #000;
+  transition: 0.5s all;
+}
+.header__cart-block .cart-block__close span:nth-child(1) {
+  transform: translateY(8px) rotate(-45deg);
+}
+.header__cart-block .cart-block__close span:nth-child(2) {
+  transform: translateY(6px) rotate(45deg);
 }
 .header .menu-hamburger__wrapper {
   padding: 30px;
@@ -405,13 +462,19 @@ h1, h2, h3, h4, h5, h6 {
   margin: 5px;
 }
 
+body {
+  background: url(../img/season_bg4.jpg) 400px/400px repeat;
+}
+
 .promo {
-  padding: 100px 10px 0 10px;
+  padding: 70px 0 0 0;
 }
 .promo__wrapper {
   display: flex;
   justify-content: space-between;
   gap: 35px;
+  background: #fff;
+  padding: 35px 15px 35px 15px;
 }
 .promo__menu {
   width: 315px;
@@ -511,38 +574,44 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: 60px;
 }
 .promo__menu-input {
-  border: 1px solid #000;
-  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 70px;
+  height: 60px;
 }
 .promo__menu-input input {
-  border: none;
   background-color: transparent;
   padding: 10px;
   width: 100%;
   font-size: 24px;
-  width: 100%;
-  height: 51px;
+  height: 35px;
+  border-radius: 10px;
 }
 .promo .search-icon {
   font-size: 24px;
-  margin-right: 20px;
+  margin: 0 15px;
   background: transparent;
   border: none;
   padding: 0;
   cursor: pointer;
+  border: 2px solid black;
+  border-radius: 50%;
+  padding: 8px;
+  transform: scale(1);
+}
+.promo .search-icon:hover {
+  transform: scale(1.3);
+  transition: transform 0.3s ease;
 }
 .promo .search__empty {
   width: 27px;
   height: 24px;
-  margin-right: 20px;
+  margin: 0 15px;
   background: transparent;
   border: none;
   padding: 0;
   cursor: pointer;
+  transform: scale(1);
 }
 .promo .search__empty span {
   display: block;
@@ -556,6 +625,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 .promo .search__empty span:nth-child(2) {
   transform: translateY(1px) rotate(45deg);
+}
+.promo .search__empty:hover {
+  transform: scale(1.3);
+  transition: transform 0.3s ease;
 }
 .promo .search__close {
   width: 28px;
@@ -658,15 +731,15 @@ h1, h2, h3, h4, h5, h6 {
   height: 48px;
   margin-right: 13px;
 }
-.season {
-  margin-top: 100px;
-  padding: 50px 10px;
-  background: url(../img/season_bg3.jpg) 400px/400px repeat;
+.season__wrapper {
+  padding: 65px 15px 30px 15px;
+  background: #fff;
 }
 .season__goods {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 25px;
+  grid-template-rows: repeat(1, auto);
+  gap: 20px;
   margin-top: 30px;
 }
 .goods__card {
@@ -704,12 +777,13 @@ h1, h2, h3, h4, h5, h6 {
   color: #604696;
 }
 
-.new {
-  padding: 50px 10px 50px 10px;
-}
 .new a {
   text-decoration: none;
   color: #000;
+}
+.new__wrapper {
+  padding: 50px 15px 50px 15px;
+  background: #fff;
 }
 .new__goods {
   display: grid;
@@ -893,6 +967,9 @@ h1, h2, h3, h4, h5, h6 {
     margin-right: 20px;
     font-size: 18px;
   }
+  .header__cart-block {
+    width: 350px;
+  }
 
   .promo__slider {
     width: 660px;
@@ -945,7 +1022,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .season__goods {
-    gap: 20px;
     grid-template-columns: repeat(3, 1fr);
   }
   .season .goods__card-title {
@@ -1029,10 +1105,6 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
   }
 
-  .season {
-    margin-top: 60px;
-  }
-
   .new__goods {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(1, auto);
@@ -1086,6 +1158,10 @@ h1, h2, h3, h4, h5, h6 {
   }
   .header__cart {
     margin-right: 40px;
+  }
+  .header__cart-block {
+    width: 250px;
+    right: -45px;
   }
 
   .promo .benefits__wrapper {

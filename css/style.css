@@ -114,9 +114,6 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 10;
   background-color: #f5f5f5;
 }
-.header__scroll {
-  background-color: #8b2c30;
-}
 .header nav {
   display: flex;
   justify-content: space-between;
@@ -472,7 +469,7 @@ body {
 .promo__wrapper {
   display: flex;
   justify-content: space-between;
-  gap: 35px;
+  gap: 25px;
   background: #fff;
   padding: 35px 15px 35px 15px;
 }
@@ -571,7 +568,7 @@ body {
 }
 .promo__menu-search .container {
   position: relative;
-  padding-top: 60px;
+  padding-top: 100px;
 }
 .promo__menu-input {
   display: flex;
@@ -594,24 +591,17 @@ body {
   border: none;
   padding: 0;
   cursor: pointer;
-  border: 2px solid black;
-  border-radius: 50%;
-  padding: 8px;
-  transform: scale(1);
-}
-.promo .search-icon:hover {
   transform: scale(1.3);
-  transition: transform 0.3s ease;
 }
 .promo .search__empty {
   width: 27px;
-  height: 24px;
+  height: 25px;
   margin: 0 15px;
   background: transparent;
   border: none;
   padding: 0;
   cursor: pointer;
-  transform: scale(1);
+  transform: scale(1.3);
 }
 .promo .search__empty span {
   display: block;
@@ -625,10 +615,6 @@ body {
 }
 .promo .search__empty span:nth-child(2) {
   transform: translateY(1px) rotate(45deg);
-}
-.promo .search__empty:hover {
-  transform: scale(1.3);
-  transition: transform 0.3s ease;
 }
 .promo .search__close {
   width: 28px;
@@ -653,6 +639,12 @@ body {
 }
 .promo__slider {
   width: 945px;
+}
+.promo .swiper-pagination-bullet-active {
+  background-color: #ec6608;
+}
+.promo .swiper-pagination {
+  display: none;
 }
 .promo .swiper-slide img {
   object-fit: contain;
@@ -1039,6 +1031,15 @@ body {
   .promo .benefits__item {
     flex: 1 0 38%;
   }
+  .promo .swiper-wrapper {
+    margin-bottom: 45px;
+  }
+  .promo .swiper-pagination {
+    display: block;
+  }
+  .promo .swiper .swiper-button-prev, .promo .swiper .swiper-button-next {
+    display: none;
+  }
 
   .season__goods {
     grid-template-columns: repeat(3, 1fr);
@@ -1155,7 +1156,7 @@ body {
 @media (max-width: 576px) {
   .container {
     max-width: 100%;
-    padding: 0 15px;
+    padding: 0 10px;
   }
 
   .title {

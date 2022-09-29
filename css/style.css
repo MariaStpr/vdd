@@ -112,7 +112,7 @@ h1, h2, h3, h4, h5, h6 {
   position: fixed;
   width: 100%;
   z-index: 10;
-  background-color: #cbcbcb;
+  background-color: #e4e4e4;
 }
 .header nav {
   display: flex;
@@ -461,6 +461,12 @@ h1, h2, h3, h4, h5, h6 {
   margin: 5px;
 }
 
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .promo {
   padding: 70px 0 0 0;
 }
@@ -683,7 +689,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 .promo .benefits {
   margin-top: 25px;
-  background-color: rgba(96, 70, 150, 0.4784313725);
+  background: rgb(243, 242, 242);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   padding: 20px 0;
   border-radius: 10px;
 }
@@ -741,6 +748,8 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 100%;
   margin: 0 auto;
   border-radius: 15px;
+  padding: 20px;
+  background: rgba(19, 165, 56, 0.4509803922);
 }
 .delivery__img img {
   width: 100%;
@@ -751,7 +760,8 @@ h1, h2, h3, h4, h5, h6 {
 .season__wrapper {
   padding: 35px 15px 30px 15px;
   border-radius: 10px;
-  background-color: rgba(253, 195, 0, 0.5607843137);
+  background: rgb(243, 242, 242);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 .season__goods {
   display: grid;
@@ -804,7 +814,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 .new__wrapper {
   padding: 50px 15px 50px 15px;
-  background: rgba(236, 102, 8, 0.6);
+  background: rgb(243, 242, 242);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   margin: 40px 0;
   border-radius: 10px;
 }
@@ -952,7 +963,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer {
   padding: 50px 0 50px 0;
-  background-color: #cbcbcb;
+  background-color: #e4e4e4;
 }
 .footer__wrapper {
   padding: 0 10px;
@@ -1127,6 +1138,10 @@ h1, h2, h3, h4, h5, h6 {
   }
   .season .goods__card-title {
     font-size: 14px;
+  }
+
+  .delivery__img {
+    padding: 10px;
   }
 
   .new__goods {

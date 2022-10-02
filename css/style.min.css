@@ -474,7 +474,7 @@ body {
   display: flex;
   justify-content: space-between;
   gap: 25px;
-  background: #fff;
+  background: transparent;
   padding: 35px 15px 35px 15px;
 }
 .promo__menu {
@@ -647,7 +647,6 @@ body {
 .promo .swiper {
   border-radius: 10px;
   padding: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 .promo .swiper-pagination-bullet-active {
   background-color: #ec6608;
@@ -737,8 +736,9 @@ body {
   margin-right: 13px;
 }
 .delivery__wrapper {
-  background: #fff;
+  background: transparent;
   padding: 35px 15px;
+  margin: 0 0 50px 0;
 }
 .delivery__title {
   text-align: center;
@@ -1164,10 +1164,10 @@ body {
     height: 32px;
   }
   .footer__accordion {
-    font-size: 16px;
+    font-size: 18px;
   }
   .footer__panel a {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 @media (max-width: 768px) {

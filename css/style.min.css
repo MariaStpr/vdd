@@ -129,7 +129,7 @@ h1, h2, h3, h4, h5, h6 {
   gap: 50px;
   padding: 0;
   margin: 0;
-  width: 60%;
+  width: 50%;
 }
 .header__logo img {
   height: 42px;
@@ -223,7 +223,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  width: 40%;
+  width: 50%;
   position: relative;
 }
 .header__menu-right a {
@@ -238,7 +238,7 @@ h1, h2, h3, h4, h5, h6 {
   display: none;
 }
 .header__menu-right .header__list-item.icon-phone {
-  margin-right: 50px;
+  margin-right: 30px;
   display: flex;
   align-items: center;
   font-size: 20px;
@@ -308,8 +308,28 @@ h1, h2, h3, h4, h5, h6 {
   background-color: transparent;
 }
 .header__menu-right .panel {
-  padding: 0 0px 0 20px;
+  padding: 0;
   margin: 0;
+}
+.header__contact-social {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 85px;
+  margin-right: 15px;
+}
+.header__contact-social a {
+  display: block;
+  width: 30px;
+  height: 30px;
+}
+.header__contact-social img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.header__contact-social > a {
+  margin-right: 15px;
 }
 .header__cart {
   margin-right: 50px;
@@ -400,17 +420,20 @@ h1, h2, h3, h4, h5, h6 {
 .header .menu-hamburger__item {
   position: relative;
   margin: 0;
+  list-style-type: none;
+  margin: 5px 0;
 }
 .header .menu-hamburger__item a {
-  line-height: 10px;
+  line-height: 30px;
+  font-size: 20px;
+  background-color: #fff;
+  transition: background-color 0.3s ease;
+  display: block;
+  padding: 0 5px;
+  border-radius: 5px;
 }
-.header .menu-hamburger__item::marker {
-  color: #000;
-  transition: color 0.3s ease;
-}
-.header .menu-hamburger__item:hover::marker {
-  color: #ec6608;
-  font-size: 18px;
+.header .menu-hamburger__item a:hover {
+  background-color: rgba(96, 70, 150, 0.3882352941);
 }
 .header .hamburger {
   position: absolute;
@@ -1059,6 +1082,12 @@ body {
     max-width: 960px;
   }
 
+  .header__menu-left {
+    width: 45%;
+  }
+  .header__menu-right {
+    width: 55%;
+  }
   .header__menu-right .header__list-item.icon-phone {
     margin-right: 20px;
     font-size: 18px;
@@ -1098,17 +1127,27 @@ body {
 
   .header__menu-left {
     gap: 15px;
+    width: 50%;
+  }
+  .header__menu-right {
+    width: 50%;
   }
   .header__menu-town {
     font-size: 18px;
   }
   .header__menu-right span.icon-phone {
     display: block;
-    margin-right: 32px;
+    margin-right: 20px;
   }
   .header__menu-right span.icon-phone::before {
     font-size: 22px;
     transition: text-shadow 0.5s ease;
+  }
+  .header__menu-right .header__list-item.icon-search {
+    margin-right: 20px;
+  }
+  .header__menu-right .header__list-item.icon-user {
+    margin-right: 20px;
   }
   .header .header__list-item.icon-phone {
     display: none;
@@ -1191,6 +1230,13 @@ body {
   }
   .header__menu-right .accordion {
     font-size: 24px;
+  }
+  .header__contact-social {
+    width: 75px;
+    margin-right: 10px;
+  }
+  .header__contact-social > a {
+    margin-right: 10px;
   }
   .header .menu-hamburger__wrapper {
     padding: 42px 0;
@@ -1310,6 +1356,9 @@ body {
   }
   .header__menu-right .accordion {
     font-size: 24px;
+  }
+  .header__contact-social {
+    display: none;
   }
   .header__cart {
     margin-right: 40px;

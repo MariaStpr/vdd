@@ -1320,6 +1320,9 @@ body {
     border-radius: 0;
     overflow: auto;
   }
+  .header__cart-block .cart-block__body {
+    max-height: 63vh;
+  }
   .header__cart-block .cart-block__close {
     position: absolute;
     z-index: 10;

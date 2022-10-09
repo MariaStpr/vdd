@@ -364,7 +364,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 18px;
   margin: 20px 0;
   max-height: 210px;
-  overflow-y: auto;
+  overflow: visible;
 }
 .header__cart-block .cart-block__close {
   width: 28px;

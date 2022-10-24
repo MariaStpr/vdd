@@ -1549,6 +1549,9 @@ body {
   .header .cart__product-text {
     min-width: 140px;
   }
+  .header .cart__product-quantity {
+    margin: 0 15px;
+  }
   .header__cart-wrapper {
     width: 90%;
   }

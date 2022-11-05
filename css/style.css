@@ -732,7 +732,7 @@ body {
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  width: 60vw;
+  width: 925px;
   overflow-y: auto;
   max-height: 55vh;
   border-radius: 6px;
@@ -1245,8 +1245,15 @@ body {
 }
 
 @media (max-width: 1270px) {
+  .container {
+    max-width: 1200px;
+  }
+
   .promo__slider {
     width: 865px;
+  }
+  .promo__submenu.show {
+    width: 845px;
   }
   .promo .benefits__item {
     flex-direction: column;
@@ -1280,6 +1287,12 @@ body {
 
   .promo__slider {
     width: 660px;
+  }
+  .promo__submenu ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .promo__submenu.show {
+    width: 640px;
   }
   .promo .benefits__wrapper {
     flex-wrap: wrap;
@@ -1337,6 +1350,9 @@ body {
 
   .promo__slider {
     width: 420px;
+  }
+  .promo__submenu.show {
+    width: 415px;
   }
   .promo .benefits {
     height: auto;

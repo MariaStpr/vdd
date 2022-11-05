@@ -650,6 +650,9 @@ body {
   border-radius: 10px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
+.promo__menu-wrapper {
+  position: relative;
+}
 .promo__menu-wrapper.active {
   display: block;
   overflow: scroll;
@@ -709,6 +712,37 @@ body {
 }
 .promo__menu-item:last-child {
   margin-bottom: 0;
+}
+.promo__submenu {
+  display: none;
+}
+.promo__submenu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+.promo__submenu.show {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 102%;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  width: 60vw;
+  overflow-y: auto;
+  max-height: 55vh;
+  border-radius: 6px;
+  padding: 20px;
+  z-index: 5;
+}
+.promo__submenu-item a {
+  font-size: 16px;
+  padding: 0;
+  word-wrap: normal;
 }
 .promo__menu-search {
   display: none;

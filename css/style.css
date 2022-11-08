@@ -1569,7 +1569,7 @@ body {
     display: none;
   }
   .promo__menu-list {
-    padding: 55px 45px;
+    padding: 80px 45px;
   }
   .promo__slider {
     width: 100%;
@@ -1694,10 +1694,10 @@ body {
   }
 
   .promo__menu-wrapper.active .catalog__close {
-    right: 20px;
+    right: 30px;
   }
   .promo__menu-list {
-    padding: 55px 30px;
+    padding: 80px 40px 0 30px;
   }
   .promo__submenu-item {
     margin-bottom: 8px;

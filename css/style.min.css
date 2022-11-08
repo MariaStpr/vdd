@@ -672,6 +672,7 @@ body {
   height: 30px;
   top: 20px;
   right: 40px;
+  z-index: 11;
 }
 .promo__menu-wrapper.active .catalog__close span {
   display: block;
@@ -713,6 +714,38 @@ body {
 .promo__menu-item:last-child {
   margin-bottom: 0;
 }
+.promo__menu-item span {
+  display: none;
+}
+.promo__menu-item .sub-menu {
+  display: none;
+  transition: all 0.5s ease-in;
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  left: 0;
+  text-align: left;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.promo__menu-item .sub-menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 55px 45px;
+}
+.promo__menu-item .sub-menu.active {
+  display: block;
+  overflow: scroll;
+  position: fixed;
+  background-color: #fff;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  top: 0;
+  left: 0;
+}
 .promo__submenu {
   display: none;
 }
@@ -739,10 +772,18 @@ body {
   padding: 20px;
   z-index: 5;
 }
+.promo__submenu-item {
+  margin-bottom: 10px;
+}
 .promo__submenu-item a {
   font-size: 16px;
   padding: 0;
   word-wrap: normal;
+}
+.promo .back-to-menulist {
+  margin: 0 0 10px 0;
+  font-size: 20px;
+  color: #9e9e9e;
 }
 .promo__menu-search {
   display: none;
@@ -1501,6 +1542,29 @@ body {
     background: transparent;
     box-shadow: none;
   }
+  .promo__menu-item {
+    position: relative;
+  }
+  .promo__menu-item a {
+    color: #000;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    display: inline-block;
+    padding: 5px;
+  }
+  .promo__menu-item span {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #000;
+    font-size: 18px;
+  }
+  .promo__menu-item .sub-menu {
+    position: static;
+  }
   .promo__menu-wrapper {
     display: none;
   }
@@ -1629,6 +1693,21 @@ body {
     display: block;
   }
 
+  .promo__menu-wrapper.active .catalog__close {
+    right: 20px;
+  }
+  .promo__menu-list {
+    padding: 55px 30px;
+  }
+  .promo__submenu-item {
+    margin-bottom: 8px;
+  }
+  .promo__submenu-item a {
+    font-size: 16px;
+  }
+  .promo__menu-item .sub-menu ul {
+    padding: 55px 30px;
+  }
   .promo .benefits__wrapper {
     padding: 0 5px;
   }

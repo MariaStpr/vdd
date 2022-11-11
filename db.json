@@ -4,69 +4,79 @@
       "name": "Подушка Мягкий сон Бамбук 40*60 Микрофибра стеганое полотно",
       "art": "ПСБч-612у",
       "price": "699 ₽",
-      "image": "img/new/goods1.webp"
+      "image": "img/new/goods1.webp",
+      "link": "good__page.html"
     },
     {
       "id": 2,
       "name": "Подушка - Традиция 68*68",
       "art": "ПТ-1",
       "price": "699 ₽",
-      "image": "img/new/goods2.webp"
+      "image": "img/new/goods2.webp",
+      "link": "good__page.html"
     },
     {
       "id": 3,
       "name": "Подушка - Традиция 50*70",
       "art": "ПТ-2",
       "price": "599 ₽",
-      "image": "img/new/goods3.webp"
+      "image": "img/new/goods3.webp",
+      "link": "good__page.html"
     },
     {
       "id": 4,
       "name": "Салатник Fioretta 14см WOOD RED",
       "art": "493 TDB",
       "price": "249 ₽",
-      "image": "img/new/goods4.webp"
+      "image": "img/new/goods4.webp",
+      "link": "good__page.html"
     },
     {
       "id": 5,
       "name": "Тарелка обеденная Luminarc 25см Дивали Лайт Блю",
       "art": "2610 P",
       "price": "199 ₽",
-      "image": "img/new/goods5.webp"
+      "image": "img/new/goods5.webp",
+      "link": "good__page.html"
     },
     {
       "id": 6,
       "name": "Тарелка десертная - 20см Флорис",
       "art": "1717 YQ",
       "price": "68 ₽",
-      "image": "img/new/goods6.webp"
+      "image": "img/new/goods6.webp",
+      "link": "good__page.html"
     },
     {
       "id": 7,
       "name": "Полотенце махровое ДМ Люкс 70*130см Plait ПЛ 3501-01933 цв 57 зеленый",
       "art": "3501-01933 ПЛ",
       "price": "519 ₽",
-      "image": "img/new/goods7.webp"
+      "image": "img/new/goods7.webp",
+      "link": "good__page.html"
     },
     {
       "id": 8,
       "name": "Полотенце махровое ДМ Люкс 70*130см Personal ПЛ 3501-02943 цв 116 персиковый",
       "art": "3501-02943 ПЛ",
       "price": "508 ₽",
-      "image": "img/new/goods8.webp"
+      "image": "img/new/goods8.webp",
+      "link": "good__page.html"
     },
     {
       "id": 9,
       "name": "Бассейн каркасный Bestway 221*150*43см Steel Pro",
       "art": "56401/1228950/249699",
       "price": "808 ₽",
-      "image": "img/new/goods9.webp"
+      "image": "img/new/goods9.webp",
+      "link": "good__page.html"
     },
     {
       "id": 10,
       "name": "Бассейн Intex надувной 272*193*104см Единорог с распылителем",
       "art": "57441/2808920",
       "price": "1900 ₽",
-      "image": "img/new/goods10.webp"
+      "image": "img/new/goods10.webp",
+      "link": "good__page.html"
     }
 ]

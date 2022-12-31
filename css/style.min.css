@@ -415,6 +415,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .header .cart__product-text {
   min-width: 200px;
+  margin-right: 10px;
 }
 .header .cart__product-title {
   font-size: 16px;
@@ -427,8 +428,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 24px;
 }
 .header .cart__product-quantity {
-  margin: 0 20px;
-  display: flex;
+  margin: 0 10px 0 0;
   justify-content: space-between;
   align-items: center;
   border: 2px solid #717171;
@@ -437,8 +437,6 @@ h1, h2, h3, h4, h5, h6 {
 .header .cart__product-count {
   font-size: 18px;
   font-weight: 700;
-  border-right: 2px solid #717171;
-  border-left: 2px solid #717171;
   width: 25px;
   height: 25px;
   display: flex;
@@ -1948,7 +1946,7 @@ body {
   height: 25px;
   position: absolute;
   top: 20px;
-  right: 0;
+  right: 10px;
   cursor: pointer;
 }
 .search__close span {
@@ -2533,9 +2531,6 @@ body {
   .header .cart__product-text {
     min-width: 140px;
   }
-  .header .cart__product-quantity {
-    margin: 0 15px;
-  }
   .header__cart-wrapper {
     width: 90%;
   }
@@ -2583,18 +2578,22 @@ body {
   }
   .promo__menu-input input {
     font-size: 20px;
-    height: 40px;
+    height: 28px;
   }
-  .promo .search__close {
+
+  .search__close {
     right: 18px;
   }
-  .promo .search__empty {
+  .search__empty {
     margin-right: 10px;
     height: 26px;
     width: 28px;
   }
-  .promo .search-icon {
+
+  .search-icon {
     margin-right: 10px;
+    font-size: 18px;
+    margin: 0 10px;
   }
 
   .benefits__wrapper {

@@ -237,6 +237,16 @@ h1, h2, h3, h4, h5, h6 {
 .header__menu-right span.icon-phone {
   display: none;
 }
+.header__menu-right .header__list-item.icon-catalog {
+  display: none;
+  font-size: 22px;
+  margin-right: 32px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transform: scale(1);
+}
 .header__menu-right .header__list-item.icon-phone {
   margin-right: 30px;
   display: flex;
@@ -310,26 +320,6 @@ h1, h2, h3, h4, h5, h6 {
 .header__menu-right .panel {
   padding: 0;
   margin: 0;
-}
-.header__contact-social {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 85px;
-  margin-right: 15px;
-}
-.header__contact-social a {
-  display: block;
-  width: 30px;
-  height: 30px;
-}
-.header__contact-social img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-.header__contact-social > a {
-  margin-right: 15px;
 }
 .header__cart {
   margin-right: 50px;
@@ -1607,11 +1597,9 @@ body {
     text-align: center;
   }
 
-  .season__goods {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(1, auto);
-    grid-auto-flow: column;
-    overflow-x: auto;
+  .goods__card-img {
+    width: 215px;
+    height: 215px;
   }
 
   .new__goods {
@@ -1668,6 +1656,9 @@ body {
   }
   .header .header__list-item.icon-phone {
     display: none;
+  }
+  .header .header__list-item.icon-catalog {
+    margin-right: 20px;
   }
 
   .promo__slider {
@@ -1757,11 +1748,11 @@ body {
   .header__menu-places {
     display: none;
   }
-  .header__menu-right .header__list-item.icon-search {
-    display: none;
-  }
   .header__menu-right .accordion {
     font-size: 24px;
+  }
+  .header__menu-right .header__list-item.icon-catalog {
+    display: block;
   }
   .header__contact-social {
     width: 75px;
@@ -1872,9 +1863,14 @@ body {
     margin: 0;
   }
 
+  .season__goods {
+    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .goods__card-img {
-    width: 200px;
-    height: 200px;
+    width: 230px;
+    height: 230px;
   }
 
   .new__goods {
@@ -2054,6 +2050,11 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .goods__card-img {
+    width: auto;
+    height: auto;
+  }
+
   .card__images-main {
     width: 80vw;
   }
@@ -2130,5 +2131,16 @@ body {
   .header__submenu {
     height: 80vh;
     overflow: auto;
+  }
+}
+@media (max-width: 390px) {
+  .header__logo img {
+    width: 150px;
+  }
+  .header__menu-right .header__list-item.icon-search {
+    margin-right: 15px;
+  }
+  .header .header__list-item.icon-catalog {
+    margin-right: 15px;
   }
 }

@@ -239,13 +239,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 .header__menu-right .header__list-item.icon-catalog {
   display: none;
-  font-size: 22px;
+  height: 24px;
+  width: 24px;
   margin-right: 32px;
   background: transparent;
   border: none;
   padding: 0;
   cursor: pointer;
   transform: scale(1);
+}
+.header__menu-right .header__list-item.icon-catalog img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 .header__menu-right .header__list-item.icon-phone {
   margin-right: 30px;
@@ -1171,14 +1177,14 @@ body {
   margin: 40px 0;
 }
 .card__images {
-  flex: 0 0 58%;
+  flex: 0 0 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: self-start;
 }
 .card__images-main {
-  width: 600px;
+  width: 550px;
   border: #c0bdbd 1px solid;
   border-radius: 10px;
   padding: 10px;
@@ -1189,7 +1195,7 @@ body {
   object-fit: contain;
 }
 .card__slider {
-  width: 600px;
+  width: 560px;
   height: 130px;
   display: grid;
   gap: 20px;
@@ -1223,12 +1229,14 @@ body {
 }
 .card__about {
   padding: 10px;
-  margin: 40px 0 0 0;
   font-size: 18px;
   text-align: justify;
+  background: rgb(243, 242, 242);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
 }
 .card__desc {
-  flex: 0 0 38%;
+  flex: 0 0 47%;
   display: flex;
   flex-direction: column;
 }
@@ -1257,7 +1265,6 @@ body {
   background-color: #36ba57;
 }
 .card__stock {
-  margin: 30px 0 0 0;
   background: rgb(243, 242, 242);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
@@ -1280,7 +1287,6 @@ body {
   color: #333;
 }
 .card__desc-info {
-  margin: 40px 0 0 0;
   background: rgb(243, 242, 242);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
@@ -1309,6 +1315,46 @@ body {
   font-style: normal;
   font-weight: 400;
   line-height: 18px;
+}
+
+.desc__tabs {
+  display: inline-block;
+  padding: 0;
+  margin: 35px 0 0 15px;
+  z-index: 1;
+}
+
+.desc__tabs li {
+  position: relative;
+  top: 2px;
+  display: inline-block;
+  margin: 0;
+  margin-right: 0px;
+  padding: 6px 12px;
+  list-style: none;
+  border: 2px dashed #ccc;
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+  cursor: pointer;
+}
+
+.desc__tabs li.active {
+  background: rgb(243, 242, 242);
+  border-style: solid;
+  border-bottom: none;
+  z-index: 5;
+}
+
+.desc__text {
+  display: none;
+}
+
+.desc__text.active {
+  display: block;
+  padding: 20px;
+  min-height: 250px;
+  font-size: 18px;
+  border: 2px solid #ccc;
 }
 
 .promo__menu-search {
@@ -1609,13 +1655,13 @@ body {
   }
 
   .card__images {
-    flex: 0 0 48%;
+    flex: 0 0 40%;
   }
   .card__images-main {
-    width: 500px;
+    width: 420px;
   }
   .card__slider {
-    width: 500px;
+    width: 420px;
     grid-template-columns: repeat(4, 1fr);
     padding: 10px;
     height: 115px;
@@ -1710,6 +1756,15 @@ body {
     grid-template-rows: repeat(1, auto);
     grid-auto-flow: column;
     overflow-x: auto;
+  }
+  .product .card__images {
+    align-items: center;
+  }
+  .product .card__images-main {
+    width: 70%;
+  }
+  .product .card__slider {
+    width: 80%;
   }
 
   .footer__menu {
@@ -1880,20 +1935,15 @@ body {
     overflow-x: auto;
   }
 
-  .card__images-main {
-    width: 470px;
-  }
-  .card__slider {
-    width: 470px;
-    grid-template-columns: repeat(4, 1fr);
-  }
-
   .product__name {
     font-size: 36px;
     line-height: 38px;
   }
   .product__art {
     margin: 20px 0 0 0;
+  }
+  .product .card__slider {
+    width: 470px;
   }
 
   .footer__menu {
@@ -2119,6 +2169,9 @@ body {
   .product__similar-title {
     font-size: 22px;
   }
+  .product .card__slider {
+    width: 250px;
+  }
 
   .footer__wrapper {
     flex-direction: column;
@@ -2133,9 +2186,24 @@ body {
     overflow: auto;
   }
 }
+@media (max-width: 445px) {
+  .desc__tabs {
+    margin: 35px 0 0 5px;
+  }
+
+  .desc__tabs li {
+    padding: 5px;
+    margin-right: -7px;
+    font-size: 14px;
+  }
+
+  .desc__text.active {
+    font-size: 16px;
+  }
+}
 @media (max-width: 390px) {
   .header__logo img {
-    width: 150px;
+    width: 135px;
   }
   .header__menu-right .header__list-item.icon-search {
     margin-right: 15px;

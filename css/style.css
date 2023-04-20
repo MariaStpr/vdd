@@ -1357,6 +1357,13 @@ body {
   border: 2px solid #ccc;
 }
 
+.page-good {
+  display: none;
+}
+.page-good .active {
+  display: block;
+}
+
 .promo__menu-search {
   display: none;
   position: fixed;

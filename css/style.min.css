@@ -905,17 +905,20 @@ body {
 }
 .delivery__title {
   text-align: center;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 .delivery__img {
   max-width: 100%;
   margin: 0 auto;
-  border-radius: 15px;
-  padding: 20px;
-  background: rgba(19, 165, 56, 0.4509803922);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(227, 235, 245);
+  padding: 25px;
+  border-radius: 20px;
 }
 .delivery__img img {
-  width: 100%;
+  width: 60%;
   height: 100%;
   object-fit: contain;
 }
@@ -1747,6 +1750,9 @@ body {
   .delivery__img {
     padding: 10px;
   }
+  .delivery__img img {
+    width: 75%;
+  }
 
   .new__goods {
     grid-template-columns: repeat(3, 1fr);
@@ -1930,6 +1936,10 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .delivery__img img {
+    width: 100%;
+  }
+
   .goods__card-img {
     width: 230px;
     height: 230px;
@@ -1977,7 +1987,7 @@ body {
   }
 
   .title {
-    font-size: 26px;
+    font-size: 22px;
   }
 
   .modal__title {

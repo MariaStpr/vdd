@@ -118,8 +118,8 @@ function callGoods() {
     }
   }
 
-  const url = 'db.json';
-  // const url = 'http://localhost:3000/goods';
+  // const url = 'db.json';
+  const urlGoods = 'https://jsonplaceholder.typicode.com/photos';
 
   const createNode = (elem) => document.createElement(elem);
 
@@ -127,29 +127,32 @@ function callGoods() {
 
   const setData = (dataInfo) => {
     const newGoods = document.querySelector('.new__goods');
-    dataInfo.forEach((productData) => {
-      const good = createNode('a');
-      good.classList.add('new__card');
-      good.setAttribute('href', productData.link);
-      append(newGoods, good);
-      good.innerHTML = `
-      <div class="new__card-img">
-        <img src="${productData.image}" alt="${productData.name}">
-      </div>
-      <div class="new__card-price">
-        ${productData.price}
-      </div>
-      <div class="new__card-title">
-          ${productData.name}
-      </div>
-      <div class="new__card-art">
-          Артикул: ${productData.art}
-      </div>
-      <button class="new__card-cart">
-          В корзину
-      </button>
-      `;
+    dataInfo.forEach(({ id, url, title }) => {
+      if (id <= 10) {
+        const good = createNode('a');
+        good.classList.add('new__card');
+        good.setAttribute('href', 'good__page.html');
+        append(newGoods, good);
+        good.innerHTML = `
+        <div class="new__card-img">
+          <img src="${url}" alt="${title}">
+        </div>
+        <div class="new__card-price">
+          ${id * 321} ₽
+        </div>
+        <div class="new__card-title">
+            ${title}
+        </div>
+        <div class="new__card-art">
+            Артикул: ${id * 1234}
+        </div>
+        <button class="new__card-cart">
+            В корзину
+        </button>
+        `;
+      }
     });
+
     const title = document.querySelectorAll('.new__card-title');
     title.forEach((element) => {
       if (element.textContent.trim().length > 37) {
@@ -317,15 +320,15 @@ function callGoods() {
     });
   };
 
-  const getInfo = () => {
-    fetch(url)
+  const getInfo = (link) => {
+    fetch(link)
       .then((res) => res.json())
       .then((data) => setData(data))
       .then((data) => addCart(data))
       .catch((error) => console.error(error));
   };
 
-  getInfo();
+  getInfo(urlGoods);
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (callGoods);
@@ -598,17 +601,20 @@ function buildSlider() {
     breakpoints: {
     // when window width is >= 320px
       280: {
-        slidesPerView: 1,
+        slidesPerView: 1.3,
       },
       400: {
-        slidesPerView: 1.5,
+        slidesPerView: 1.7,
       },
-      500: {
-        slidesPerView: 1.8,
+      577: {
+        slidesPerView: 2.2,
+      },
+      769: {
+        slidesPerView: 2.1,
       },
       // when window width is >= 640px
       993: {
-        slidesPerView: 2.5,
+        slidesPerView: 2.6,
       },
       1200: {
         slidesPerView: 3.3,
@@ -810,7 +816,7 @@ try {
   (0,_goods_js__WEBPACK_IMPORTED_MODULE_3__["default"])();
   (0,_modal_js__WEBPACK_IMPORTED_MODULE_4__["default"])();
 } catch (e) {
-  console.log(e);
+  // console.log(e);
 } finally {
   (0,_town_js__WEBPACK_IMPORTED_MODULE_5__["default"])();
   (0,_cart_js__WEBPACK_IMPORTED_MODULE_6__["default"])();

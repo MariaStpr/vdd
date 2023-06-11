@@ -596,10 +596,11 @@ function searchGoods() {
       searchBlock.innerHTML = '';
 
       const getData = () => {
-        fetch('/db.json')
+        fetch('https://mariastpr.github.io/vdd/db.json')
           .then((response) => response.json())
           .then((data) => b(data))
-          .then((data) => (0,_renderSearchGoods_js__WEBPACK_IMPORTED_MODULE_0__["default"])(data));
+          .then((data) => (0,_renderSearchGoods_js__WEBPACK_IMPORTED_MODULE_0__["default"])(data))
+          .catch((error) => console.log(error));
       };
       getData();
     }

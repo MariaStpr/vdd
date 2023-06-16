@@ -623,6 +623,7 @@ body {
 }
 .promo__menu {
   width: 315px;
+  height: fit-content;
   margin: 0;
   padding: 0;
   background: #fff;
@@ -1600,7 +1601,6 @@ body {
   gap: 10px;
   margin: 25px 0 0 0;
   height: auto;
-  overflow-y: scroll;
   max-height: 350px;
 }
 .search-result__item {
@@ -1654,6 +1654,10 @@ body {
   font-style: normal;
   font-weight: 700;
   line-height: 24px;
+}
+.search-result__empty {
+  font-size: 20px;
+  font-weight: 700;
 }
 
 @media (max-width: 1270px) {

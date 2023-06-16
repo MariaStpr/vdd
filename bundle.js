@@ -504,22 +504,30 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-function renderSearchGoods(dataInfo) {
+function renderSearchGoods(dataInfo, searchInput) {
   const searchBlock = document.querySelector('.search__result');
-  dataInfo.forEach(({ title, art, price, image }) => {
-    searchBlock.insertAdjacentHTML(
-      'beforeend',
-      `<a href = "/" class="search-result__item">
+  let list = '';
+
+  if (dataInfo.length === 0) {
+    searchBlock.innerHTML = `<div class="search-result__empty">По запросу «${searchInput}» товаров не найдено. Попробуйте изменить ваш запрос</div>`;
+    searchBlock.style.overflowY = '';
+  } else {
+    dataInfo.forEach(({ title, art, image }) => {
+      list += `
+      <a href = "/" class="search-result__item">
         <div class="search-result__image">
           <img src="${image}" alt="${title}">
         </div>
         <div class="search-result__desc">
-          <div class="search-result__title">${title}</div>
-          <div class="search-result__art">${art}</div>
+        <div class="search-result__title">${title.replace(new RegExp(`${searchInput}`, 'gi'), `<b>${searchInput}</b>`)}</div>
+        <div class="search-result__art">${art.replace(new RegExp(`${searchInput}`, 'gi'), `<b>${searchInput}</b>`)}</div>
         </div>
       </a>`
-    );
-  });
+
+      searchBlock.style.overflowY = 'scroll';
+    });
+    searchBlock.innerHTML = list;
+  }
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (renderSearchGoods);
@@ -582,9 +590,9 @@ function searchGoods() {
   searchInput.addEventListener('input', (e) => {
     const value = e.target.value;
 
-    function b(photos) {
-      const titleArray = photos.filter(({ title }) => {
-        if (title.toLowerCase().indexOf(value.toLowerCase()) !== -1) return title;
+    function titleWithValue(photos) {
+      const titleArray = photos.filter(({ title, art }) => {
+        if (title.toLowerCase().indexOf(value.toLowerCase()) !== -1 || art.toLowerCase().indexOf(value.toLowerCase()) !== -1) return title;
       });
       return titleArray;
     }
@@ -598,8 +606,8 @@ function searchGoods() {
       const getData = () => {
         fetch('https://mariastpr.github.io/vdd/db.json')
           .then((response) => response.json())
-          .then((data) => b(data))
-          .then((data) => (0,_renderSearchGoods_js__WEBPACK_IMPORTED_MODULE_0__["default"])(data))
+          .then((data) => titleWithValue(data))
+          .then((data) => (0,_renderSearchGoods_js__WEBPACK_IMPORTED_MODULE_0__["default"])(data, value))
           .catch((error) => console.log(error));
       };
       getData();

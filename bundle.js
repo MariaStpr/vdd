@@ -128,7 +128,7 @@ function callGoods() {
   const setData = (dataInfo) => {
     const newGoods = document.querySelector('.new__goods');
     dataInfo.forEach(({ id, url, title }) => {
-      if (id <= 10) {
+      if (document.querySelectorAll('.new__card').length < 10) {
         const good = createNode('a');
         good.classList.add('new__card');
         good.setAttribute('href', 'good__page.html');
@@ -169,7 +169,6 @@ function callGoods() {
     const fullPrice = document.querySelector('.full__price');
     const cartBtnBig = document.querySelector('.cart__btn');
     const cartQuantity = document.querySelector('.header__cart span');
-    // const cartContentProduct = cartProductsList.querySelectorAll('.cart__content-item');
     let price = 0;
     let counter = 1;
 
@@ -509,7 +508,7 @@ function renderSearchGoods(dataInfo, searchInput) {
   let list = '';
 
   if (dataInfo.length === 0) {
-    searchBlock.innerHTML = `<div class="search-result__empty">По запросу «${searchInput}» товаров не найдено. Попробуйте изменить ваш запрос</div>`;
+    searchBlock.innerHTML = `<div class="search-result__empty">По запросу «${searchInput}» товаров не найдено. Попробуйте изменить ваш запрос.</div>`;
     searchBlock.style.overflowY = '';
   } else {
     dataInfo.forEach(({ title, art, image }) => {
@@ -589,6 +588,8 @@ function searchGoods() {
 
   searchInput.addEventListener('input', (e) => {
     const value = e.target.value;
+    const searchBlock = document.querySelector('.search__result');
+    const searchEmptyBtn = document.querySelector('.search__empty');
 
     function titleWithValue(photos) {
       const titleArray = photos.filter(({ title, art }) => {
@@ -596,8 +597,10 @@ function searchGoods() {
       });
       return titleArray;
     }
+    searchEmptyBtn.addEventListener('click', () => {
+      searchBlock.innerHTML = '';
+    });
 
-    const searchBlock = document.querySelector('.search__result');
     if (value === '') {
       searchBlock.innerHTML = '';
     } else {

@@ -920,22 +920,22 @@ try {
   (0,_button_top_js__WEBPACK_IMPORTED_MODULE_9__["default"])();
   (0,_searchGoods_js__WEBPACK_IMPORTED_MODULE_12__["default"])();
 
-  // // Accordion
-  // const accord = document.getElementsByClassName('footer__accordion');
-  // let j;
+  // Accordion
+  const accord = document.getElementsByClassName('footer__accordion');
+  let j;
 
-  // // eslint-disable-next-line no-plusplus
-  // for (j = 0; j < accord.length; j++) {
-  //   accord[j].addEventListener('click', (event) => {
-  //     event.target.classList.toggle('active');
-  //     const panel = event.target.nextElementSibling;
-  //     if (panel.style.maxHeight) {
-  //       panel.style.maxHeight = null;
-  //     } else {
-  //       panel.style.maxHeight = `${panel.scrollHeight}px`;
-  //     }
-  //   });
-  // }
+  // eslint-disable-next-line no-plusplus
+  for (j = 0; j < accord.length; j++) {
+  accord[j].addEventListener('click', (event) => {
+   event.target.classList.toggle('active');
+  const panel = event.target.nextElementSibling;
+  if (panel.style.maxHeight) {
+  panel.style.maxHeight = null;
+  } else {
+  panel.style.maxHeight = `${panel.scrollHeight}px`;
+   }
+  });
+ }
 }
 
 (0,_tabs_js__WEBPACK_IMPORTED_MODULE_10__["default"])();

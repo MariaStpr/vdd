@@ -185,14 +185,6 @@ function callGoods() {
         `;
       }
     });
-
-    const title = document.querySelectorAll('.new__card-title');
-    title.forEach((element) => {
-      if (element.textContent.trim().length > 37) {
-        // eslint-disable-next-line no-param-reassign
-        element.textContent = `${element.textContent.trim().substr(0, 37)}...`;
-      }
-    });
   };
 
   const addCart = function () {
@@ -522,6 +514,77 @@ function openModal() {
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (openModal);
+
+
+/***/ }),
+
+/***/ "./src/js/renderGoodsInFIlter.js":
+/*!***************************************!*\
+  !*** ./src/js/renderGoodsInFIlter.js ***!
+  \***************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function renderGoodsInFIlter() {
+  const goodsInFilterPage = document.querySelector('.goods-section__sort');// название товара
+
+  const cardTitle = document.querySelectorAll('.new__card-title');
+
+  for (let k = 0; k < cardTitle.length; k++) {
+    if (cardTitle[k].trim().length > 37) {
+      cardTitle[k].textContent = `${cardTitle[k].innerHTML.trim().substr(0, 37)}...`;
+    }
+  }
+
+  // const url = 'db.json';
+  const urlGoods = 'https://jsonplaceholder.typicode.com/photos';
+
+  const createNode = (elem) => document.createElement(elem);
+
+  const append = (parent, element) => parent.appendChild(element);
+
+  const setData = (dataInfo) => {
+    dataInfo.forEach(({ id, url, title }) => {
+      if (document.querySelectorAll('.card__filter').length < 12) {
+        const good = createNode('a');
+        good.classList.add('card__filter');
+        good.setAttribute('href', 'good__page.html');
+        append(goodsInFilterPage, good);
+        good.innerHTML = `
+        <div class="new__card-img card-img">
+          <img src="${url}" alt="${title}">
+        </div>
+        <div class="new__card-price">
+          ${id * 321} ₽
+        </div>
+        <div class="new__card-title">
+            ${title}
+        </div>
+        <div class="new__card-art">
+            Артикул: ${id * 1234}
+        </div>
+        <button class="new__card-cart">
+            В корзину
+        </button>
+        `;
+      }
+    });
+  };
+
+  const getInfo = (link) => {
+    fetch(link)
+      .then((res) => res.json())
+      .then((data) => setData(data))
+      .catch((error) => console.error(error));
+  };
+
+  getInfo(urlGoods);
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (renderGoodsInFIlter);
 
 
 /***/ }),
@@ -916,6 +979,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _slider_good_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./slider-good.js */ "./src/js/slider-good.js");
 /* harmony import */ var _searchGoods_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./searchGoods.js */ "./src/js/searchGoods.js");
 /* harmony import */ var _accordion_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./accordion.js */ "./src/js/accordion.js");
+/* harmony import */ var _renderGoodsInFIlter_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./renderGoodsInFIlter.js */ "./src/js/renderGoodsInFIlter.js");
 
 
 /* eslint-disable no-inner-declarations */
@@ -923,6 +987,7 @@ __webpack_require__.r(__webpack_exports__);
 // import * as flsFunction from './modules/functions';
 
 // flsFunction.isWebp();
+
 
 
 
@@ -959,6 +1024,16 @@ try {
 
 (0,_tabs_js__WEBPACK_IMPORTED_MODULE_10__["default"])();
 (0,_slider_good_js__WEBPACK_IMPORTED_MODULE_11__["default"])();
+(0,_renderGoodsInFIlter_js__WEBPACK_IMPORTED_MODULE_14__["default"])();
+
+function filterGoods() {
+  const filterBtn = document.querySelector('.goods-section__filter-btn');
+  const filterBlock = document.querySelector('.section-filter');
+  const filterBtnClose = document.querySelector('.section-filter__close');
+  filterBtn.addEventListener('click', () => filterBlock.classList.add('active'));
+  filterBtnClose.addEventListener('click', () => filterBlock.classList.remove('active'));
+}
+filterGoods();
 
 })();
 

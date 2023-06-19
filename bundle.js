@@ -2,6 +2,39 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/js/accordion.js":
+/*!*****************************!*\
+  !*** ./src/js/accordion.js ***!
+  \*****************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function accordion() {
+  // Accordion
+  const accord = document.getElementsByClassName('footer__accordion');
+  let j;
+  // eslint-disable-next-line no-plusplus
+  for (j = 0; j < accord.length; j++) {
+    accord[j].addEventListener('click', (event) => {
+      event.target.classList.toggle('active');
+      const panel = event.target.nextElementSibling;
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = `${panel.scrollHeight}px`;
+      }
+    });
+  }
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (accordion);
+
+
+/***/ }),
+
 /***/ "./src/js/button-top.js":
 /*!******************************!*\
   !*** ./src/js/button-top.js ***!
@@ -882,6 +915,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _tabs_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./tabs.js */ "./src/js/tabs.js");
 /* harmony import */ var _slider_good_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./slider-good.js */ "./src/js/slider-good.js");
 /* harmony import */ var _searchGoods_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./searchGoods.js */ "./src/js/searchGoods.js");
+/* harmony import */ var _accordion_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./accordion.js */ "./src/js/accordion.js");
 
 
 /* eslint-disable no-inner-declarations */
@@ -889,6 +923,7 @@ __webpack_require__.r(__webpack_exports__);
 // import * as flsFunction from './modules/functions';
 
 // flsFunction.isWebp();
+
 
 
 
@@ -919,23 +954,7 @@ try {
   (0,_menu_js__WEBPACK_IMPORTED_MODULE_8__["default"])();
   (0,_button_top_js__WEBPACK_IMPORTED_MODULE_9__["default"])();
   (0,_searchGoods_js__WEBPACK_IMPORTED_MODULE_12__["default"])();
-
-  // Accordion
-  const accord = document.getElementsByClassName('footer__accordion');
-  let j;
-
-  // eslint-disable-next-line no-plusplus
-  for (j = 0; j < accord.length; j++) {
-  accord[j].addEventListener('click', (event) => {
-   event.target.classList.toggle('active');
-  const panel = event.target.nextElementSibling;
-  if (panel.style.maxHeight) {
-  panel.style.maxHeight = null;
-  } else {
-  panel.style.maxHeight = `${panel.scrollHeight}px`;
-   }
-  });
- }
+  (0,_accordion_js__WEBPACK_IMPORTED_MODULE_13__["default"])();
 }
 
 (0,_tabs_js__WEBPACK_IMPORTED_MODULE_10__["default"])();
